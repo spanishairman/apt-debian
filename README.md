@@ -104,7 +104,7 @@ IP-адрес клиентской машины - ***192.168.121.11/32***. Та�
     mkdir nginx-1.22.1/debian/modules && cd $_
     git clone --recurse-submodules -j8 https://github.com/google/ngx_brotli
     mkdir ngx_brotli/deps/brotli/out && cd $_
-    cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_FLAGS="-Ofast -m64 -march=native -mtune=native -flto -funroll-loops -ffunction-sections -fdata-sections -Wl,--gc-sections" -DCMAKE_CXX_FLAGS="-Ofast -m64 -march=native -mtune=native -flto -funroll-l>
+    cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_FLAGS="-Ofast -m64 -march=native -mtune=native -flto -funroll-loops -ffunction-sections -fdata-sections -Wl,--gc-sections" -DCMAKE_CXX_FLAGS="-Ofast -m64 -march=native -mtune=native -flto -funroll-loops -ffunction-sections -fdata-sections -Wl,--gc-sections" -DCMAKE_INSTALL_PREFIX=./installed ..
     cmake --build . --config Release --target brotlienc
 ```
 В файле ***rules*** вложенного каталога ***debian*** добавим строку, которая указывает на модуль ***brotli***.
