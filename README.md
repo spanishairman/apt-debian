@@ -107,7 +107,7 @@ IP-адрес клиентской машины - ***192.168.121.11/32***. Та�
     cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DCMAKE_C_FLAGS="-Ofast -m64 -march=native -mtune=native -flto -funroll-loops -ffunction-sections -fdata-sections -Wl,--gc-sections" -DCMAKE_CXX_FLAGS="-Ofast -m64 -march=native -mtune=native -flto -funroll-l>
     cmake --build . --config Release --target brotlienc
 ```
-В файле rules вложенного каталога ***debian*** добавим строку, которая указывает на модуль ***brotli***.
+В файле ***rules*** вложенного каталога ***debian*** добавим строку, которая указывает на модуль ***brotli***.
 
 ```
     cd /home/vagrant/custom-nginx/nginx-1.22.1/
