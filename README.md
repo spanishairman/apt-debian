@@ -61,24 +61,6 @@ Vagrant.configure("2") do |config|
 
 Для сетевого адаптера указан определенный MAC-адрес, на основании этого значения для виртуальной машины будет зарезервирован ip-адрес - ***192.168.121.10/32***.
 
-Для NFS-клиента соответствующий блок настроек выглядит так:
-```
-  config.vm.define "Debian12c" do |clnt|
-    clnt.vm.box = "/home/max/vagrant/images/debian12"
-    clnt.vm.provider "libvirt" do |lv|
-    lv.memory = "2048"
-    lv.cpus = "2"
-    lv.title = "Debian12c"
-    lv.description = "Виртуальная машина на базе дистрибутива Debian Linux"
-    lv.management_network_name = "vagrant-libvirt-mgmt"
-    lv.management_network_address = "192.168.121.0/24"
-    lv.management_network_keep = "true"
-    lv.management_network_mac = "52:54:00:27:28:84"
-    lv.storage :file, :size => '1G', :device => 'vdb', :allow_existing => false
-  end
-```
-IP-адрес клиентской машины - ***192.168.121.11/32***. Также выдается со стороны гипервизора с помощью настроек резервирования адресов.
-
 Пример резервирования ip-адресов:
 ![Резервирование шз-адресов](mac.png)
 
